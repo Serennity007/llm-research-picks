@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-08T20:06:41.422Z",
+  "checkedOn": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "direction": "llm-research-picks",
+  "method": "Direct HTTP fetch + the bundled reader decoder/parser; Electron-style UA; raw Qiaomu DTD guard checked separately",
+  "results": [
+    {
+      "id": "llm-research-picks",
+      "name": "大模型研究精选",
+      "feedUrl": "https://raw.githubusercontent.com/Serennity007/llm-research-picks/main/feed.xml",
+      "ok": false,
+      "error": "The operation was aborted due to timeout"
+    }
+  ]
+}

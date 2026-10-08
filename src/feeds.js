@@ -13,7 +13,7 @@ export const CURATED_FEEDS = [
     "name": "大模型研究精选",
     "category": "article",
     "siteUrl": "https://github.com/Serennity007/llm-research-picks",
-    "feedUrl": "https://raw.githubusercontent.com/Serennity007/llm-research-picks/main/feed.xml",
+    "feedUrl": "https://serennity007.github.io/llm-research-picks/feed.xml",
     "note": "人工逐篇精选，附原创摘要与推荐理由；审核并提交后才更新"
   }
 ];

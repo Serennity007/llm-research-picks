@@ -4,7 +4,7 @@
   "title": "大模型研究精选",
   "scope": "语言模型架构、训练、后训练与推理能力研究",
   "curatedOn": "2026-10-09",
-  "feedUrl": "https://raw.githubusercontent.com/Serennity007/llm-research-picks/main/feed.xml",
+  "feedUrl": "https://serennity007.github.io/llm-research-picks/feed.xml",
   "picks": [
     {
       "id": "ttt-fast-slow-weights",

@@ -43,7 +43,7 @@ mkdirSync('docs', { recursive: true });
 writeFileSync(sourcesMode ? 'docs/source-validation.json' : 'docs/validation.json', `${JSON.stringify(report, null, 2)}\n`, 'utf8');
 const cell = value => String(value || '').replaceAll('|', '\\|').replaceAll('\n', ' ');
 const rows = results.map(row => `| ${cell(row.name)} | ${row.ok ? '可抓取/可解析' : `失败：${cell(row.error)}`} | ${row.count ?? '—'} | ${row.newest ?? '无日期'} | ${row.ok ? (row.qiaomuGuardCompatible ? '通过原始字符串守卫' : '存在 DOCTYPE/ENTITY 文本，乔木可能拒绝') : '未判定'} |`).join('\n');
-const samples = results.filter(row => row.ok).map(row => `### ${row.name}\n\n${row.sample.map(item => `- [${item.title}](${item.url})${item.date ? ` — ${item.date}` : ''}`).join('\n')}`).join('\n\n');
+const samples = results.filter(row => row.ok).map(row => `### ${row.name}\n\n${row.sample.map(item => `- [${item.title}](${item.url})${item.date ? ` — ${item.date}` : ''}`).join('\n')}`).join('\n\n') || '当前没有成功抓取的文章样本，失败原因见上表。';
 writeFileSync(sourcesMode ? 'docs/SOURCE-VALIDATION.md' : 'docs/VALIDATION.md', `# ${DIRECTION.name}${sourcesMode ? '候选来源' : '精选流'}真实抓取验证\n\n验证日期：${checkedOn}（Asia/Shanghai）。时间戳：${checkedAt}。\n\n直接请求源站，复用本阅读器的解码与解析函数；使用 Electron 风格 UA。结果不代表 Obsidian 实际 UI 验证。乔木列只检测其当前原始字符串 DTD 守卫，不宣称已执行乔木完整解析器。${sourcesMode ? '候选池可能含边缘主题，样本不等于已经选入；默认频道只展示 picks.js 中审核的文章。' : ''}\n\n| 源 | 结果 | 条目数 | 最新条目日期 | 乔木 DTD 守卫 |\n| --- | --- | --- | --- | --- |\n${rows}\n\n日期与文章样本来自实时源站；如源站时间偏离当前日期，需人工核对，脚本不修正源站数据。\n\n## 用于方向复核的实际样本\n\n${samples}\n`, 'utf8');
 for (const row of results) console.log(`${row.ok ? 'OK' : 'FAIL'} ${row.name}: ${row.ok ? `${row.count} entries; newest ${row.newest}; Qiaomu guard ${row.qiaomuGuardCompatible}` : row.error}`);
 if (results.some(row => !row.ok)) process.exitCode = 1;

@@ -3,7 +3,7 @@
   <head><title>大模型研究精选</title></head>
   <body>
     <outline text="大模型研究精选" title="大模型研究精选">
-      <outline type="rss" text="大模型研究精选" title="大模型研究精选" xmlUrl="https://raw.githubusercontent.com/Serennity007/llm-research-picks/main/feed.xml" htmlUrl="https://github.com/Serennity007/llm-research-picks"/>
+      <outline type="rss" text="大模型研究精选" title="大模型研究精选" xmlUrl="https://serennity007.github.io/llm-research-picks/feed.xml" htmlUrl="https://github.com/Serennity007/llm-research-picks"/>
     </outline>
   </body>
 </opml>
