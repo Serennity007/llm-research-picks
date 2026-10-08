@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>大模型研究精选</title>
+    <link>https://github.com/Serennity007/llm-research-picks</link>
+    <description>语言模型架构、训练、后训练与推理能力研究。逐篇精选，附原创摘要与推荐理由；链接到原站，不转载全文。</description>
+    <language>zh-CN</language>
+    <item>
+      <title>Test Time Training</title>
+      <link>https://ianbarber.blog/2026/09/02/test-time-training/</link>
+      <guid isPermaLink="true">https://ianbarber.blog/2026/09/02/test-time-training/</guid>
+      <pubDate>Thu, 03 Sep 2026 02:39:14 GMT</pubDate>
+      <dc:creator>Ian Barber's Blog</dc:creator>
+      <description>Ian Barber's Blog。精选理由：“推理时训练”容易被混用；这篇把具体更新对象和重置边界讲清楚，能避免把新的模型状态机制当成持久知识更新。
+
+摘要：区分推理时更新模型参数的慢权重训练，与在前向过程中更新状态矩阵的快权重机制。说明部分 KV binding 型 TTT 可改写成线性注意力，而且状态会随新序列重置，不能据此宣称模型获得持续学习能力。
+
+阅读原文：https://ianbarber.blog/2026/09/02/test-time-training/</description>
+    </item>
+    <item>
+      <title>MOPD</title>
+      <link>https://ianbarber.blog/2026/07/09/mopd/</link>
+      <guid isPermaLink="true">https://ianbarber.blog/2026/07/09/mopd/</guid>
+      <pubDate>Thu, 09 Jul 2026 10:15:31 GMT</pubDate>
+      <dc:creator>Ian Barber's Blog</dc:creator>
+      <description>Ian Barber's Blog。精选理由：把“合并多个专长”落到小模型、教师路由和 KL／policy-gradient 两种训练目标，提供能读懂的实践入口；示例规模有限，不能直接推断前沿模型效果。
+
+摘要：作者用 Qwen3-1.7B 和 LoRA 适配器，在自己的 FactWorld 任务中实践多教师 on-policy distillation：先各自强化两个能力，再让学生生成轨迹，由对应教师评分并共同更新一个学生适配器。
+
+阅读原文：https://ianbarber.blog/2026/07/09/mopd/</description>
+    </item>
+    <item>
+      <title>Reinforcement Learning for Knowledge Awareness</title>
+      <link>https://kalomaze.bearblog.dev/rl-for-knowledge-awareness/</link>
+      <guid isPermaLink="true">https://kalomaze.bearblog.dev/rl-for-knowledge-awareness/</guid>
+      <pubDate>Thu, 07 May 2026 02:07:00 GMT</pubDate>
+      <dc:creator>kalomaze's kalomazing blog</dc:creator>
+      <description>kalomaze's kalomazing blog。精选理由：用具体实验重看偏好建模和奖励信号，既看减少编造，也看泛化与真实问题上的代价，适合研究模型知识边界。
+
+摘要：用 Qwen3-8B 的单层线性打分器构造 Bradley–Terry 奖励模型，再做约 300 步 RL。通过真实人物与虚构人物问题的保留集，检查模型是否学会先判断自己知道什么，以及拒答、谨慎表达和误拒真实问题之间的变化。
+
+阅读原文：https://kalomaze.bearblog.dev/rl-for-knowledge-awareness/</description>
+    </item>
+    <item>
+      <title>Don't Exclude Rollouts From Your RL Training Runs</title>
+      <link>https://kalomaze.bearblog.dev/dont-exclude-rl-rollouts/</link>
+      <guid isPermaLink="true">https://kalomaze.bearblog.dev/dont-exclude-rl-rollouts/</guid>
+      <pubDate>Fri, 20 Feb 2026 00:37:00 GMT</pubDate>
+      <dc:creator>kalomaze's kalomazing blog</dc:creator>
+      <description>kalomaze's kalomazing blog。精选理由：关注训练奖励上升而评测下降的具体机制，保留作者对因果证据不足的限制；值得作为算法实现审查的反例阅读，而不是定论。
+
+摘要：分析 DAPO 等实现中丢弃超长 rollout 的问题：过滤样本和对长度塑造奖励并不等价，前者可能改变训练分布和组内优势基线。文章明确承认，现有公开曲线不足以证明某次评测崩溃由过滤单独造成。
+
+阅读原文：https://kalomaze.bearblog.dev/dont-exclude-rl-rollouts/</description>
+    </item>
+    <item>
+      <title>On-Policy Distillation</title>
+      <link>https://thinkingmachines.ai/blog/on-policy-distillation/</link>
+      <guid isPermaLink="true">https://thinkingmachines.ai/blog/on-policy-distillation/</guid>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <dc:creator>Thinking Machines Lab 技术研究</dc:creator>
+      <description>Thinking Machines Lab 技术研究。精选理由：在同一篇里连接采样分布、密集反馈、损失函数和复现实验，是理解现代后训练的一篇基础读物；复现应以更新后的 cookbook 模型清单为准。
+
+摘要：由学生生成自己的轨迹，教师给出逐 token 的概率信号，再以反向 KL 更新学生。原作者解释它如何减轻离线模仿的状态分布偏差，并用推理任务和明确的训练伪代码比较蒸馏、SFT 与稀疏奖励 RL。
+
+阅读原文：https://thinkingmachines.ai/blog/on-policy-distillation/</description>
+    </item>
+    <item>
+      <title>LoRA Without Regret</title>
+      <link>https://thinkingmachines.ai/blog/lora/</link>
+      <guid isPermaLink="true">https://thinkingmachines.ai/blog/lora/</guid>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 GMT</pubDate>
+      <dc:creator>Thinking Machines Lab 技术研究</dc:creator>
+      <description>Thinking Machines Lab 技术研究。精选理由：给出 LoRA 可行区间及失效条件，避免只凭单个 rank 或一张最终分数表作选择。虽然发表于 2025 年，仍是值得保留的研究方法基础文。
+
+摘要：通过模型、rank、数据量、batch size 和学习率对照，研究 LoRA 在哪些后训练条件下接近全量微调。结论强调适配器容量、MLP／MoE 层覆盖及优化配置；少量 RL 数据与大规模知识学习需要分别判断。
+
+阅读原文：https://thinkingmachines.ai/blog/lora/</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "llm-research-picks",
+  "title": "大模型研究精选",
+  "scope": "语言模型架构、训练、后训练与推理能力研究",
+  "curatedOn": "2026-10-09",
+  "feedUrl": "https://raw.githubusercontent.com/Serennity007/llm-research-picks/main/feed.xml",
+  "picks": [
+    {
+      "id": "ttt-fast-slow-weights",
+      "title": "Test Time Training",
+      "url": "https://ianbarber.blog/2026/09/02/test-time-training/",
+      "published": "2026-09-03T02:39:14Z",
+      "sourceId": "ian-barber",
+      "summary": "区分推理时更新模型参数的慢权重训练，与在前向过程中更新状态矩阵的快权重机制。说明部分 KV binding 型 TTT 可改写成线性注意力，而且状态会随新序列重置，不能据此宣称模型获得持续学习能力。",
+      "reason": "“推理时训练”容易被混用；这篇把具体更新对象和重置边界讲清楚，能避免把新的模型状态机制当成持久知识更新。",
+      "tags": [
+        "模型机制",
+        "推理时训练",
+        "概念边界"
+      ]
+    },
+    {
+      "id": "mopd-capability-integration",
+      "title": "MOPD",
+      "url": "https://ianbarber.blog/2026/07/09/mopd/",
+      "published": "2026-07-09T10:15:31Z",
+      "sourceId": "ian-barber",
+      "summary": "作者用 Qwen3-1.7B 和 LoRA 适配器，在自己的 FactWorld 任务中实践多教师 on-policy distillation：先各自强化两个能力，再让学生生成轨迹，由对应教师评分并共同更新一个学生适配器。",
+      "reason": "把“合并多个专长”落到小模型、教师路由和 KL／policy-gradient 两种训练目标，提供能读懂的实践入口；示例规模有限，不能直接推断前沿模型效果。",
+      "tags": [
+        "蒸馏",
+        "能力整合",
+        "小模型实验"
+      ]
+    },
+    {
+      "id": "rl-knowledge-awareness",
+      "title": "Reinforcement Learning for Knowledge Awareness",
+      "url": "https://kalomaze.bearblog.dev/rl-for-knowledge-awareness/",
+      "published": "2026-05-07T02:07:00Z",
+      "sourceId": "kalomaze",
+      "summary": "用 Qwen3-8B 的单层线性打分器构造 Bradley–Terry 奖励模型，再做约 300 步 RL。通过真实人物与虚构人物问题的保留集，检查模型是否学会先判断自己知道什么，以及拒答、谨慎表达和误拒真实问题之间的变化。",
+      "reason": "用具体实验重看偏好建模和奖励信号，既看减少编造，也看泛化与真实问题上的代价，适合研究模型知识边界。",
+      "tags": [
+        "奖励建模",
+        "知识边界",
+        "原始实验"
+      ]
+    },
+    {
+      "id": "rl-rollout-filtering-bias",
+      "title": "Don't Exclude Rollouts From Your RL Training Runs",
+      "url": "https://kalomaze.bearblog.dev/dont-exclude-rl-rollouts/",
+      "published": "2026-02-20T00:37:00Z",
+      "sourceId": "kalomaze",
+      "summary": "分析 DAPO 等实现中丢弃超长 rollout 的问题：过滤样本和对长度塑造奖励并不等价，前者可能改变训练分布和组内优势基线。文章明确承认，现有公开曲线不足以证明某次评测崩溃由过滤单独造成。",
+      "reason": "关注训练奖励上升而评测下降的具体机制，保留作者对因果证据不足的限制；值得作为算法实现审查的反例阅读，而不是定论。",
+      "tags": [
+        "强化学习",
+        "采样偏差",
+        "失败模式"
+      ]
+    },
+    {
+      "id": "on-policy-distillation-foundation",
+      "title": "On-Policy Distillation",
+      "url": "https://thinkingmachines.ai/blog/on-policy-distillation/",
+      "published": "2025-10-27T00:00:00Z",
+      "sourceId": "thinking-machines",
+      "summary": "由学生生成自己的轨迹，教师给出逐 token 的概率信号，再以反向 KL 更新学生。原作者解释它如何减轻离线模仿的状态分布偏差，并用推理任务和明确的训练伪代码比较蒸馏、SFT 与稀疏奖励 RL。",
+      "reason": "在同一篇里连接采样分布、密集反馈、损失函数和复现实验，是理解现代后训练的一篇基础读物；复现应以更新后的 cookbook 模型清单为准。",
+      "tags": [
+        "基础读物",
+        "蒸馏",
+        "后训练"
+      ]
+    },
+    {
+      "id": "lora-without-regret-foundation",
+      "title": "LoRA Without Regret",
+      "url": "https://thinkingmachines.ai/blog/lora/",
+      "published": "2025-09-29T00:00:00Z",
+      "sourceId": "thinking-machines",
+      "summary": "通过模型、rank、数据量、batch size 和学习率对照，研究 LoRA 在哪些后训练条件下接近全量微调。结论强调适配器容量、MLP／MoE 层覆盖及优化配置；少量 RL 数据与大规模知识学习需要分别判断。",
+      "reason": "给出 LoRA 可行区间及失效条件，避免只凭单个 rank 或一张最终分数表作选择。虽然发表于 2025 年，仍是值得保留的研究方法基础文。",
+      "tags": [
+        "基础读物",
+        "LoRA",
+        "受控实验"
+      ]
+    }
+  ],
+  "sourcePool": [
+    {
+      "id": "kalomaze",
+      "name": "kalomaze's kalomazing blog",
+      "siteUrl": "https://kalomaze.bearblog.dev/",
+      "feedUrl": "https://kalomaze.bearblog.dev/feed/?type=rss",
+      "note": "Prime Intellect 研究工程师的长篇 RL 与 LoRA 实验。低频更新：截至核验日，最近一篇是 2026-05-07。",
+      "quality": "作者主页说明参与 Prime Intellect 的强化学习工作；文章给出实际模型、训练配置、实验曲线和失败现象。算法批评中明确区分机制推理与尚未证明的因果归因。",
+      "evidenceUrl": "https://kalomaze.bearblog.dev/rl-for-knowledge-awareness/",
+      "evidenceTitle": "Reinforcement Learning for Knowledge Awareness",
+      "validation": {
+        "httpStatus": 200,
+        "format": "rss",
+        "itemCount": 7,
+        "bytes": 107999,
+        "newestPublished": "2026-05-07T02:07:00Z"
+      }
+    },
+    {
+      "id": "thinking-machines",
+      "name": "Thinking Machines Lab 技术研究",
+      "siteUrl": "https://thinkingmachines.ai/blog/",
+      "feedUrl": "https://thinkingmachines.ai/blog/index.xml",
+      "note": "研究原作者的 LoRA 与 on-policy distillation 实验。整源还含公司文章和多模态发布，只人工纳入本清单中的文本模型技术文章。",
+      "quality": "LoRA 文章来自 John Schulman 等研究者的实验，区分数据容量、batch size、训练矩阵和学习率条件；蒸馏文章提供损失、伪代码、对照实验及复现入口。Tinker 推广动机需要与研究结果分开看。",
+      "evidenceUrl": "https://thinkingmachines.ai/blog/lora/",
+      "evidenceTitle": "LoRA Without Regret",
+      "validation": {
+        "httpStatus": 200,
+        "format": "rss",
+        "itemCount": 7,
+        "bytes": 1107382,
+        "newestPublished": "2026-07-31T00:00:00Z"
+      }
+    },
+    {
+      "id": "ian-barber",
+      "name": "Ian Barber's Blog",
+      "siteUrl": "https://ianbarber.blog/",
+      "feedUrl": "https://ianbarber.blog/feed/",
+      "note": "选自模型训练与研究文章；整源也写 agent 和行业观察，只有逐篇核验的研究内容进入精选。",
+      "quality": "MOPD 文章明确报告作者自建 FactWorld、Qwen3-1.7B 和 LoRA 实验；TTT 文章将快权重、慢权重和序列重置区分清楚，是有边界的技术解释而非新实验。",
+      "evidenceUrl": "https://ianbarber.blog/2026/07/09/mopd/",
+      "evidenceTitle": "MOPD",
+      "validation": {
+        "httpStatus": 200,
+        "format": "rss",
+        "itemCount": 15,
+        "bytes": 118643,
+        "newestPublished": "2026-10-01T22:55:20Z"
+      }
+    }
+  ],
+  "excluded": [
+    {
+      "name": "Thinking Machines: Interaction Models",
+      "feedUrl": "https://thinkingmachines.ai/blog/index.xml",
+      "reason": "2026-05-11 原文明确涉及实时音频、视频和文本交互，超出本轮排除视觉／视频／多模态的文章边界；同源其余技术精选不受影响。",
+      "url": "https://thinkingmachines.ai/blog/interaction-models/"
+    },
+    {
+      "name": "Thinking Machines 公司宣言及开源政策文章",
+      "feedUrl": "https://thinkingmachines.ai/blog/index.xml",
+      "reason": "A Safe Path to Open Weights / The Future Worth Building Is Human 属于政策或公司观点，未选入训练方法研究清单。"
+    },
+    {
+      "name": "Transformer Circuits",
+      "feedUrl": "https://transformer-circuits.pub/feed.xml",
+      "reason": "高质量且已实测 HTTP 200、Atom 56 条、最新 2026-08-21；交由 AI 评测与安全方向收录，避免方向间重复。"
+    },
+    {
+      "name": "Deep (Learning) Focus",
+      "feedUrl": "https://cameronrwolfe.substack.com/feed",
+      "reason": "实测 HTTP 200、20 条、最新 2026-09-28，当前内容高度相关；RSS 为 5.52 MB 全文，部分文章标注 Paid。已读 LLM RL guide 与 midtraining 原页，本版不为扩充数量追加同题综述，可作为后续候选。"
+    },
+    {
+      "name": "Token for Token / Jack Morris",
+      "feedUrl": "https://blog.jxmo.io/feed",
+      "reason": "实测 HTTP 200、10 条、最新 2026-06-15；embedding 训练长文有价值，但整源包含较多 AGI 和职业观点，本版已有足够原创训练文章，不再增加。"
+    },
+    {
+      "name": "科学空间 / 苏剑林",
+      "feedUrl": "https://kexue.fm/feed",
+      "reason": "实测 HTTP 200、RSS 10 条、最新 2026-10-03；收到的 UTF-8 XML 标题已包含大量 U+FFFD 字符，无法靠改解码恢复。本次不把损坏标题导入精选；站点研究质量本身不受此判断影响。"
+    },
+    {
+      "name": "Neel Nanda mechanistic-interpretability RSS",
+      "feedUrl": "https://www.neelnanda.io/mechanistic-interpretability?format=rss",
+      "reason": "实测 HTTP 200、16 条，但该分类 RSS 最新停在 2023-07-18；不能把作者仍活跃与这条 RSS 仍更新混为一谈。"
+    },
+    {
+      "name": "Artificial Fintelligence",
+      "feedUrl": "https://www.artfintel.com/feed",
+      "reason": "实测 HTTP 200、20 条，最新为 2025-06-26；新近 Making RL Fast 在作者另一站发布，不能把那篇误算进本订阅。"
+    },
+    {
+      "name": "Finbarr Timbers 个人博客 RSS",
+      "feedUrl": "https://finbarr.ca/feed.xml",
+      "reason": "实测 HTTP 200、10 条、最新 2026-04-15；Making RL Fast 为强候选，但整源混有个人理财、通用工程与旧视觉内容，本轮已有更紧凑的模型训练选集。"
+    },
+    {
+      "name": "Davis Summarizes Papers",
+      "feedUrl": "https://dblalock.substack.com/feed",
+      "reason": "搜索到的主站 archive 最新技术内容为 2024-08-26，主题为广泛 ML 论文综述；未实测本 RSS，不声称订阅已验证。"
+    },
+    {
+      "name": "Sebastian Ruder / Yao Fu",
+      "feedUrl": null,
+      "reason": "搜索发现研究质量优秀，但目前所读页面较旧或含多模态主题，未核验合适 RSS，不为凑数加入。"
+    }
+  ]
+}

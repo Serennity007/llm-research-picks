@@ -1,0 +1,10 @@
+{
+  "id": "llm-research-picks",
+  "name": "大模型研究精选",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "语言模型架构、训练、后训练与推理能力研究的人工精选阅读，可记入今日日记。",
+  "author": "正涛 (Serennity007)",
+  "authorUrl": "https://github.com/Serennity007",
+  "isDesktopOnly": false
+}

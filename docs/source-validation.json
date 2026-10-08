@@ -1,0 +1,161 @@
+{
+  "checkedAt": "2026-10-08T20:00:31.236Z",
+  "checkedOn": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "direction": "llm-research-picks",
+  "method": "Direct HTTP fetch + the bundled reader decoder/parser; Electron-style UA; raw Qiaomu DTD guard checked separately",
+  "results": [
+    {
+      "id": "kalomaze",
+      "name": "kalomaze's kalomazing blog",
+      "feedUrl": "https://kalomaze.bearblog.dev/feed/?type=rss",
+      "finalUrl": "https://kalomaze.bearblog.dev/feed/?type=rss",
+      "ok": true,
+      "count": 7,
+      "format": "rss",
+      "bytes": 107999,
+      "newest": "2026-05-07",
+      "qiaomuGuardCompatible": true,
+      "sample": [
+        {
+          "title": "Reinforcement Learning for Knowledge Awareness",
+          "url": "https://kalomaze.bearblog.dev/rl-for-knowledge-awareness/",
+          "date": "Thu, 07 May 2026 02:07:00 +0000"
+        },
+        {
+          "title": "Don't Exclude Rollouts From Your RL Training Runs",
+          "url": "https://kalomaze.bearblog.dev/dont-exclude-rl-rollouts/",
+          "date": "Fri, 20 Feb 2026 00:37:00 +0000"
+        },
+        {
+          "title": "RL Learning with LoRA: A Diverse Deep Dive",
+          "url": "https://kalomaze.bearblog.dev/rl-lora-ddd/",
+          "date": "Sun, 09 Nov 2025 02:53:00 +0000"
+        },
+        {
+          "title": "Understanding Transformers... (beyond the Math)",
+          "url": "https://kalomaze.bearblog.dev/understanding-transformers-beyond-the-math/",
+          "date": "Sun, 09 Mar 2025 00:10:00 +0000"
+        },
+        {
+          "title": "GRPO Judge Experiments: Findings & Empirical Observations",
+          "url": "https://kalomaze.bearblog.dev/grpo-judge-experiments-findings-and-empirical-observations/",
+          "date": "Mon, 03 Mar 2025 22:07:00 +0000"
+        },
+        {
+          "title": "Why does GRPO work?",
+          "url": "https://kalomaze.bearblog.dev/why-does-grpo-work/",
+          "date": "Thu, 27 Feb 2025 05:45:00 +0000"
+        },
+        {
+          "title": "Synthetic rejected preference data creation [via Qwen7b finetune]",
+          "url": "https://kalomaze.bearblog.dev/synthetic-rejected-preference-data-creation-via-qwen7b-finetune/",
+          "date": "Thu, 27 Feb 2025 05:11:00 +0000"
+        }
+      ]
+    },
+    {
+      "id": "thinking-machines",
+      "name": "Thinking Machines Lab 技术研究",
+      "feedUrl": "https://thinkingmachines.ai/blog/index.xml",
+      "finalUrl": "https://thinkingmachines.ai/blog/index.xml",
+      "ok": true,
+      "count": 7,
+      "format": "rss",
+      "bytes": 1107382,
+      "newest": "2026-07-31",
+      "qiaomuGuardCompatible": true,
+      "sample": [
+        {
+          "title": "A Safe Path to Open Weights",
+          "url": "https://thinkingmachines.ai/blog/a-safe-path-to-open-weights/",
+          "date": "Fri, 31 Jul 2026 00:00:00 GMT"
+        },
+        {
+          "title": "The Future Worth Building Is Human",
+          "url": "https://thinkingmachines.ai/blog/the-future-worth-building-is-human/",
+          "date": "Fri, 10 Jul 2026 00:00:00 GMT"
+        },
+        {
+          "title": "Interaction Models: A Scalable Approach to Human-AI Collaboration",
+          "url": "https://thinkingmachines.ai/blog/interaction-models/",
+          "date": "Mon, 11 May 2026 00:00:00 GMT"
+        },
+        {
+          "title": "On-Policy Distillation",
+          "url": "https://thinkingmachines.ai/blog/on-policy-distillation/",
+          "date": "Mon, 27 Oct 2025 00:00:00 GMT"
+        },
+        {
+          "title": "LoRA Without Regret",
+          "url": "https://thinkingmachines.ai/blog/lora/",
+          "date": "Mon, 29 Sep 2025 00:00:00 GMT"
+        },
+        {
+          "title": "Modular Manifolds",
+          "url": "https://thinkingmachines.ai/blog/modular-manifolds/",
+          "date": "Fri, 26 Sep 2025 00:00:00 GMT"
+        },
+        {
+          "title": "Defeating Nondeterminism in LLM Inference",
+          "url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/",
+          "date": "Wed, 10 Sep 2025 07:01:00 GMT"
+        }
+      ]
+    },
+    {
+      "id": "ian-barber",
+      "name": "Ian Barber's Blog",
+      "feedUrl": "https://ianbarber.blog/feed/",
+      "finalUrl": "https://ianbarber.blog/feed/",
+      "ok": true,
+      "count": 15,
+      "format": "rss",
+      "bytes": 118643,
+      "newest": "2026-10-01",
+      "qiaomuGuardCompatible": true,
+      "sample": [
+        {
+          "title": "No Cap",
+          "url": "https://ianbarber.blog/2026/10/01/no-cap/",
+          "date": "Thu, 01 Oct 2026 22:55:20 +0000"
+        },
+        {
+          "title": "Environments and Benchmarks",
+          "url": "https://ianbarber.blog/2026/09/26/environments-and-benchmarks/",
+          "date": "Sun, 27 Sep 2026 01:23:12 +0000"
+        },
+        {
+          "title": "We found an itchiness direction in LLMs",
+          "url": "https://ianbarber.blog/2026/09/20/we-found-an-itchiness-direction-in-llms/",
+          "date": "Sun, 20 Sep 2026 20:10:21 +0000"
+        },
+        {
+          "title": "Agents have favorite tools",
+          "url": "https://ianbarber.blog/2026/09/14/agents-have-favorite-tools/",
+          "date": "Tue, 15 Sep 2026 04:23:47 +0000"
+        },
+        {
+          "title": "Agents love prefill",
+          "url": "https://ianbarber.blog/2026/09/13/agents-love-prefill/",
+          "date": "Mon, 14 Sep 2026 03:36:00 +0000"
+        },
+        {
+          "title": "Test Time Training",
+          "url": "https://ianbarber.blog/2026/09/02/test-time-training/",
+          "date": "Thu, 03 Sep 2026 02:39:14 +0000"
+        },
+        {
+          "title": "Chunky Agents",
+          "url": "https://ianbarber.blog/2026/08/28/chunky-agents/",
+          "date": "Sat, 29 Aug 2026 04:32:17 +0000"
+        },
+        {
+          "title": "Vocab Break",
+          "url": "https://ianbarber.blog/2026/08/24/vocab-break/",
+          "date": "Tue, 25 Aug 2026 03:39:21 +0000"
+        }
+      ]
+    }
+  ]
+}
