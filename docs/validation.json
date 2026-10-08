@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-08T20:06:41.422Z",
+  "checkedAt": "2026-10-08T20:11:33.169Z",
   "checkedOn": "2026-10-09",
   "timezone": "Asia/Shanghai",
   "direction": "llm-research-picks",
@@ -8,9 +8,46 @@
     {
       "id": "llm-research-picks",
       "name": "大模型研究精选",
-      "feedUrl": "https://raw.githubusercontent.com/Serennity007/llm-research-picks/main/feed.xml",
-      "ok": false,
-      "error": "The operation was aborted due to timeout"
+      "feedUrl": "https://serennity007.github.io/llm-research-picks/feed.xml",
+      "finalUrl": "https://serennity007.github.io/llm-research-picks/feed.xml",
+      "ok": true,
+      "count": 6,
+      "format": "rss",
+      "bytes": 5999,
+      "newest": "2026-09-03",
+      "qiaomuGuardCompatible": true,
+      "sample": [
+        {
+          "title": "Test Time Training",
+          "url": "https://ianbarber.blog/2026/09/02/test-time-training/",
+          "date": "Thu, 03 Sep 2026 02:39:14 GMT"
+        },
+        {
+          "title": "MOPD",
+          "url": "https://ianbarber.blog/2026/07/09/mopd/",
+          "date": "Thu, 09 Jul 2026 10:15:31 GMT"
+        },
+        {
+          "title": "Reinforcement Learning for Knowledge Awareness",
+          "url": "https://kalomaze.bearblog.dev/rl-for-knowledge-awareness/",
+          "date": "Thu, 07 May 2026 02:07:00 GMT"
+        },
+        {
+          "title": "Don't Exclude Rollouts From Your RL Training Runs",
+          "url": "https://kalomaze.bearblog.dev/dont-exclude-rl-rollouts/",
+          "date": "Fri, 20 Feb 2026 00:37:00 GMT"
+        },
+        {
+          "title": "On-Policy Distillation",
+          "url": "https://thinkingmachines.ai/blog/on-policy-distillation/",
+          "date": "Mon, 27 Oct 2025 00:00:00 GMT"
+        },
+        {
+          "title": "LoRA Without Regret",
+          "url": "https://thinkingmachines.ai/blog/lora/",
+          "date": "Mon, 29 Sep 2025 00:00:00 GMT"
+        }
+      ]
     }
   ]
 }
